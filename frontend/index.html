@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/styles.css" />
+    <title>CAN'T STOP ME HAHAHA</title>
+  </head>
+  <body>
+    <form action="/auth" method="post">
+      <div class="imgcontainer">
+        <img src="./static/images/img_avatar2.png" alt="Avatar" class="avatar" />
+      </div>
+      {% if invalid_creds %}
+      <div id="invalid-cred-label">
+        INVALID AUTHENTICATION!
+        HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA
+      </div>
+      <style>
+        #invalid-cred-label {
+          font-size: large;
+          background-color: crimson;
+          color: aliceblue;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          justify-content: center;
+          padding: 8px;
+          margin: 12px;
+        }
+      </style>
+      {% elif logged_in %}
+      <div id="invalid-cred-label">GOOD AUTHENTICATION!</div>
+      <style>
+        #invalid-cred-label {
+          font-size: large;
+          background-color: forestgreen;
+          color: aliceblue;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          justify-content: center;
+          padding: 8px;
+          margin: 12px;
+        }
+      </style>
+      {% endif %}
+      <div class="container">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required />
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required />
+
+        <button type="submit">Login</button>
+        <!-- <label> <input type="checkbox" checked="checked" name="remember" /> Remember me </label> -->
+      </div>
+
+      <!-- <div class="container" style="background-color: #f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div> -->
+    </form>
+    <script defer>
+      window.onload = function () {
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (!isChrome) {
+          document.getElementById('iframeAudio').remove();
+        } else {
+          document.getElementById('playAudio').play();
+          // document.getElementById('playAudio').remove(); // just to make sure that it will not have 2x audio in the background
+        }
+        var context = new AudioContext();
+      };
+    </script>
+  </body>
+</html>
