@@ -10,7 +10,7 @@ class User(BaseModel):
 
 
 class FakeDB(BaseModel):
-    users: list[User] = []
+    users: List[User] = []
 
 
 DB = FakeDB(users=[User(username=os.getenv('ADMIN_USERNAME', 'username'),
